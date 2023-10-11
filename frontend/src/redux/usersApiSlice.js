@@ -1,32 +1,33 @@
 import { apiSlice } from './apiSlice';
 // const USERS_URL = '/api/user';
 const USERS_URL = 'http://localhost:5000/api/user/login';
+const DEPLOYED_URL = 'https://user-auth-backend-68nw.onrender.com';
 
 export const userApiSlice = apiSlice.injectEndpoints({
     endpoints : (builder) =>({
        login:builder.mutation({
         query:(data)=>({
-            url : `http://localhost:5000/api/user/login`,
+            url : `${DEPLOYED_URL}/api/user/login`,
             method : 'POST',
             body : data
         }),
        }),
        logout:builder.mutation({
         query:(data)=>({
-            url : `http://localhost:5000/api/user/logout`,
+            url : `${DEPLOYED_URL}/api/user/logout`,
             method : 'POST',
         }),
        }),
        register:builder.mutation({
         query:(data)=>({
-            url : `http://localhost:5000/api/user/register`,
+            url : `${DEPLOYED_URL}/api/user/register`,
             method : 'POST',
             body : data
         }),
        }),
        update:builder.mutation({
         query:(data)=>({
-            url : `http://localhost:5000/api/user/profile`,
+            url : `${DEPLOYED_URL}/api/user/profile`,
             method : 'PUT',
             body : data
         }),
